@@ -22,7 +22,7 @@ export const GithubProvider = ({ children }) => {
     axios
       .get(`${GITHUB_URL}/search/users?${params}`, {
         headers: {
-          Authorization: `token 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`,
+          Authorization: `token ${GITHUB_TOKEN}`,
         },
       })
       .then(async (res) => {
@@ -41,7 +41,7 @@ export const GithubProvider = ({ children }) => {
     axios
       .get(`${GITHUB_URL}/users/${login}`, {
         headers: {
-          Authorization: `token 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`,
+          Authorization: `token ${GITHUB_TOKEN}`,
         },
       })
       .then(async (res) => {
@@ -67,7 +67,7 @@ export const GithubProvider = ({ children }) => {
     axios
       .get(`${GITHUB_URL}/users/${login}/repos?${params}`, {
         headers: {
-          Authorization: `token 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`,
+          Authorization: `token ${GITHUB_TOKEN}`,
         },
       })
       .then(async (res) => {
