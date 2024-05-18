@@ -1,11 +1,10 @@
 import React from "react";
 import { createContext, useReducer } from "react";
-import { useState } from "react";
 import githubReducer from "./GithubContextReducer";
 import axios from "axios";
 const GithubContext = createContext();
-import GITHUB_URL from "../../../config";
-import { GITHUB_TOKEN } from "../../../config";
+const GITHUB_URL = process.env.GITHUB_URL;
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 export const GithubProvider = ({ children }) => {
   const initialState = {
     users: [],
